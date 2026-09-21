@@ -30,6 +30,17 @@
 @media(max-width:1050px){.game-header{gap:15px}.round-card strong{font-size:16px}.zone{width:26%;height:26%}.zone h2{font-size:24px}.clue-card{font-size:34px}.steps{display:grid;grid-template-columns:1fr 1fr;max-width:380px;row-gap:12px}.steps small{font-size:11px}.steps li{font-size:17px}}
 @media(max-height:600px) and (min-width:650px){.steps{display:flex;gap:9px;max-width:none}.steps li{font-size:13px}.steps small{font-size:9px}.steps li b{width:25px;height:25px}.round-card strong{font-size:14px}.round-card span{font-size:9px;padding:2px}.zone h2{font-size:18px}.clue-card{width:220px;height:90px;font-size:32px}.zone{height:27%}.zone-target{font-size:8px}.zone.hovering .zone-target{font-size:12px}.game-header{gap:12px}#debugReadout{top:75px;font-size:9px}#teacherPanel{max-height:calc(100% - 80px)}}
 @media(orientation:portrait){.zone{width:31%;height:22%}.food,.body{top:25%}.legs,.movement{bottom:18%}.zone h2{font-size:14px}.clue-card{width:clamp(154px,42vw,240px);height:90px;font-size:26px}.brand{display:none}.score-card>span{display:none}.round-card strong{font-size:14px}.game-header{justify-content:space-between;gap:5px}.round-card span{font-size:9px}.zone.hovering .zone-target{font-size:10px}.zone-target{letter-spacing:0}.clue-card:after{display:none}.next-steps{font-size:11px}}
+/* Collected clues stay in their categories throughout play and on the final board. */
+.zone-words{position:absolute;left:12px;right:12px;top:74px;bottom:28px;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-content:center;gap:7px;pointer-events:none;z-index:3}
+.collected-word{display:grid;place-items:center;min-height:34px;padding:5px 3px;border:1px solid #8dc9b3;border-radius:9px;background:#e9fff3;color:#14533f;font-size:clamp(17px,2.15vw,28px);font-weight:900;white-space:nowrap;animation:arrive .25s ease-out}
+.zone.has-words .zone-target{top:auto;bottom:7px;height:12px;left:12px;right:40px;border:0;font-size:9px;letter-spacing:.5px;color:#4d7185;justify-content:start;border-radius:0}
+.zone.has-words.hovering .zone-target{font-size:11px;color:#806111}.zone.has-words .zone-count{bottom:6px}
+#boardComplete{position:absolute;left:50%;top:53%;transform:translate(-50%,-50%);width:34%;max-width:400px;text-align:center;z-index:25;padding:15px 7px}
+#boardComplete .eyebrow{justify-content:center;color:#147356;font-size:12px}#boardComplete h2{font-size:clamp(26px,3.5vw,46px);line-height:1.1;margin:9px 0;color:#166b53}#boardComplete h2 span{font-size:.45em;letter-spacing:1px}#boardComplete>p:not(.eyebrow){font-size:clamp(13px,1.5vw,18px);line-height:1.6;margin:10px 0 17px}#boardComplete small{font-size:12px}#boardComplete .primary{font-size:clamp(12px,1.4vw,16px);padding:12px 16px;line-height:1.35}#boardComplete .text-button{margin:9px auto 0}
+@media(max-width:1050px){.zone-words{top:66px;gap:6px}.collected-word{font-size:21px;min-height:31px}}
+@media(max-height:600px) and (min-width:650px){.zone-words{top:44px;bottom:19px;gap:3px;left:9px;right:9px}.collected-word{font-size:14px;padding:1px 2px;min-height:20px;border-radius:5px}.zone.has-words .zone-target{font-size:7px;bottom:3px}.zone.has-words.hovering .zone-target{font-size:9px}#boardComplete{padding:0;top:53%}#boardComplete h2{font-size:25px;margin:4px 0}#boardComplete .eyebrow{font-size:10px}#boardComplete>p:not(.eyebrow){font-size:12px;line-height:1.2;margin:5px 0 9px}#boardComplete small{font-size:9px}#boardComplete .primary{font-size:11px;padding:8px 13px;min-height:38px}#boardComplete .text-button{font-size:10px;margin:0;padding:5px;min-height:28px}}
+@media(orientation:portrait){.zone-words{grid-template-columns:1fr;top:68px;bottom:22px;gap:3px;left:7px;right:7px}.collected-word{font-size:14px;min-height:20px;padding:2px}.zone.has-words .zone-target{display:none}#boardComplete{width:32%;padding:0;top:53%}#boardComplete h2{font-size:23px}#boardComplete .eyebrow{font-size:8px;letter-spacing:1px}#boardComplete>p:not(.eyebrow){font-size:11px;margin:7px 0}#boardComplete small{font-size:9px}#boardComplete .primary{font-size:9px;padding:10px 4px}#boardComplete .text-button{font-size:10px}}
+#boardComplete .text-button{margin-left:auto;margin-right:auto}
 </style>
 </head>
 <body>
@@ -67,6 +78,12 @@
       <div class="zone movement" data-category="movement" tabindex="0" role="button" aria-label="Drop into Movement"><div class="zone-title"><span>➜</span><h2>MOVEMENT</h2></div><div class="zone-target">DROP CLUE HERE</div><span class="zone-count">0 / 4</span></div>
     </div>
     <div id="cards" aria-label="Floating clue cards"></div>
+    <section id="boardComplete" hidden aria-label="Completed vocabulary board">
+      <p class="eyebrow">CASE READY!</p><h2>12 / 12<br><span>CLUES SORTED</span></h2>
+      <p>Great work, Detectives!<br><small>อ่านคำศัพท์ในทั้ง 4 หมวดด้วยกัน</small></p>
+      <button id="boardReview" class="primary">TURN CLUES INTO<br>QUESTIONS →</button>
+      <button id="boardReplay" class="text-button">↻ PLAY AGAIN</button>
+    </section>
     <div id="feedback" role="status" aria-live="polite"></div>
     <div id="handOverlay" hidden aria-hidden="true"><span id="palmCursor"></span></div>
     <div id="holdRing" hidden aria-label="Hold to drop progress"><span>0%</span></div>
@@ -195,7 +212,7 @@
         this.key=key;this.started=now;this.fired=false;
       }
       this.last=now;
-      const progress=Math.min(1,Math.max(0,(now-this.started)/this.duration));
+      const progress=this.duration<=0?1:Math.min(1,Math.max(0,(now-this.started)/this.duration));
       const ready=progress>=1&&!this.fired;if(ready)this.fired=true;
       return {ready,progress};
     }
@@ -265,9 +282,11 @@
   'use strict';
   // TEACHER SETTINGS — adjust these values to tune classroom interaction.
   const TOUCH_RADIUS = 70;       // TOUCH HIT RADIUS: CSS px at a 1280 px-wide display.
-  const GRAB_HOLD_MS = 180;      // AUTO-GRAB DELAY: any fingertip touches the enlarged card.
+  const GRAB_HOLD_MS = 0;        // INSTANT TOUCH: catch on the first valid fingertip contact.
   const DROP_HOLD_MS = 400;      // AUTO-DROP DELAY: card CENTER stays in a category.
-  const SMOOTHING = 0.30;        // HAND SMOOTHING: interpolation at a 30 Hz reference rate.
+  const SMOOTHING = 0.55;        // Responsive hand follow; interpolation at a 30 Hz reference rate.
+  const FLOAT_X_PX = 60;         // Slow side-to-side travel; clamped to the clear center corridor.
+  const FLOAT_Y_PX = 32;         // Slow up/down travel. A full side-to-side cycle takes 18 seconds.
   const FINGERTIP_LANDMARKS = [4,8,12,16,20]; // Thumb, index, middle, ring, pinky.
   const GAME_SECONDS = 150;      // TIMER: pacing only; zero never ends the game.
   const MP_ROOT = 'https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/';
@@ -286,7 +305,11 @@
     cameraWanted:false, stream:null, cameraEpoch:0, generation:0, mp:null, mpPromise:null, scriptPromise:null,
     sendBusy:false, sendStalled:false, sendingEpoch:0, lastSend:0, drag:null, selected:null, smooth:null, lastHand:0, lostSince:0,
     tips:[], palm:null, confidence:null, blockedUntil:0, pointerUntil:0, keyboardId:null, lastTime:0,
-    reviewIndex:0, elapsedPaint:-1, debug:false, fps:0, debugPaint:0, awaitingHand:false };
+    reviewIndex:0, elapsedPaint:-1, debug:false, fps:0, debugPaint:0, awaitingHand:false, motionTime:0, lastVideoTime:-1 };
+  for(const zone of zones){
+    const list=document.createElement('ul');list.className='zone-words';list.setAttribute('aria-label',zone.querySelector('h2').textContent+' collected clues');
+    zone.append(list);
+  }
   const fingerDots=FINGERTIP_LANDMARKS.map((landmark,i)=>{
     const dot=document.createElement('span');dot.className='finger-dot finger-'+i;dot.dataset.landmark=landmark;
     $('handOverlay').append(dot);return dot;
@@ -356,7 +379,7 @@
     state.mpPromise = (async()=> {
       await loadScript();
       const hands = new window.Hands({ locateFile: file=>MP_ROOT+file });
-      hands.setOptions({ maxNumHands:2, modelComplexity:0, minDetectionConfidence:.6, minTrackingConfidence:.6 });
+      hands.setOptions({ maxNumHands:2, modelComplexity:0, minDetectionConfidence:.45, minTrackingConfidence:.45 });
       hands.onResults(results=> {
         if (state.sendingEpoch===state.cameraEpoch && state.stream && state.tracking) processHands(results.multiHandLandmarks || [],results.multiHandedness||[]);
       });
@@ -416,10 +439,12 @@
   function resetGame() {
     state.generation++; clearDelayed(); cancelDrag(); stopCamera();
     session.reset(); cards.clear(); $('cards').replaceChildren(); state.elapsedPaint=-1;
-    state.running=true; state.paused=false; state.loading=false; state.keyboardId=null;state.awaitingHand=false;
+    state.running=true; state.paused=false; state.loading=false; state.keyboardId=null;state.awaitingHand=false;state.motionTime=0;state.lastVideoTime=-1;
     $('paused').hidden=true; $('loading').hidden=true; $('feedback').className=''; $('feedback').textContent='';
     $('stationMessage').hidden=true; $('witnesses').hidden=false; resetHand(); screen('game');
-    zones.forEach(zone=>zone.classList.remove('flash','hovering'));
+    $('boardComplete').hidden=true;
+    document.querySelector('.gesture-guide').textContent='TOUCH → MOVE → HOLD';
+    zones.forEach(zone=>{zone.classList.remove('flash','hovering','has-words');zone.querySelector('.zone-words').replaceChildren();});
     spawn(0);
     updateScore(); updateTimer(); updateControls();
     status('TOUCH / MOUSE MODE','Drag the word to a category. Hold briefly to drop.');
@@ -431,7 +456,8 @@
     el.dataset.word=word.id; el.setAttribute('aria-label',word.text+'. Drag to a category, or press Enter then choose a category.');
     const card={word,slot,el,x:0,y:0,status:'idle',waitMs:0};
     cards.set(word.id,card); $('cards').append(el);
-    grabGate.reset();dropGate.reset();state.blockedUntil=performance.now()+200;
+    position(card,innerWidth*.5,$('app').clientHeight*.53);
+    grabGate.reset();dropGate.reset();state.blockedUntil=performance.now()+100;
     $('roundLabel').textContent='CLUE '+(session.score+1)+' / 12';
     el.addEventListener('pointerdown',event=>pointerStart(event,card));
     el.addEventListener('keydown',event=> {
@@ -446,6 +472,12 @@
     $('clues').innerHTML=`${session.score} <small>/ 12</small>`; $('points').textContent=session.score;
     $('progress').replaceChildren(...Array.from({length:12},(_,i)=>{const el=document.createElement('i');if(i<session.score) el.className='done';return el;}));
     for(const zone of zones) {const id=zone.dataset.category; const total=WORDS.filter(w=>w.category===id);const count=total.filter(w=>session.sorted.has(w.id)).length; zone.querySelector('.zone-count').textContent=`${count} / ${total.length}`; }
+  }
+  function keepWord(word){
+    const zone=zones.find(el=>el.dataset.category===word.category),list=zone.querySelector('.zone-words');
+    if([...list.children].some(el=>el.dataset.word===word.id))return;
+    const chip=document.createElement('li');chip.className='collected-word';chip.dataset.word=word.id;chip.textContent=word.text;
+    list.append(chip);zone.classList.add('has-words');
   }
   function updateTimer() {
     const seconds=Math.max(0,Math.ceil(session.remaining));
@@ -502,7 +534,7 @@
       position(card,r.left+r.width/2,r.top+r.height*.65);
       card.waitMs=750;
       zone.classList.add('flash');defer(()=>zone.classList.remove('flash'),700);
-      chime('correct');say('✓ CORRECT! Great clue!','correct');updateScore();
+      keepWord(card.word);chime('correct');say('✓ CORRECT! Great clue!','correct');updateScore();
     }else{card.status='retry';card.waitMs=700;card.el.classList.remove('grabbed');card.el.classList.add('retry');chime('wrong');say('✗ NOT YET! Try another category.','wrong');}
   }
   function pointerStart(event,card) {
@@ -553,7 +585,8 @@
     $('palmCursor').style.transform=`translate(${state.palm.x-12}px,${state.palm.y-12}px)`;
     const card=[...cards.values()][0];
     if(!state.drag&&card?.status==='idle'&&now>=state.blockedUntil){
-      const touching=state.tips.some(p=>cardAt(p)===card);
+      // Raw fingertips make contact immediate; smoothed dots/palm keep the carried card steady.
+      const touching=points.some(p=>cardAt(p)===card)||state.tips.some(p=>cardAt(p)===card);
       const hold=grabGate.update(touching?card.word.id:null,now);
       card.el.classList.toggle('touching',touching);card.el.style.setProperty('--grab',hold.progress*100+'%');
       if(hold.ready)grab(card,'hand',state.palm);
@@ -590,7 +623,13 @@
   }
   function finish() {
     if(state.screen!=='game')return; state.running=false;stopCamera();chime('finish');
-    $('paused').hidden=true;state.paused=false;renderSummary();screen('finish');
+    $('paused').hidden=true;state.paused=false;renderSummary();showBoard();
+  }
+  function showBoard(){
+    screen('game');$('boardComplete').hidden=false;$('feedback').className='';
+    zones.forEach(zone=>zone.querySelector('.zone-target').textContent='READ TOGETHER');
+    document.querySelector('.gesture-guide').textContent='READ → REMEMBER';
+    status('CASE READY!','Read the words in each category. อ่านทบทวนคำศัพท์ในแต่ละหมวด');
   }
   function renderSummary() {
     $('summary').replaceChildren(...CATEGORIES.map(category=> {
@@ -615,10 +654,15 @@
   function frame(now) {
     const dt=state.lastTime?Math.max(0,(now-state.lastTime)/1000):0;state.lastTime=now;
     if(playable()){
-      if(!state.awaitingHand)session.tick(dt);updateTimer();
+      if(!state.awaitingHand)session.tick(dt);updateTimer();state.motionTime+=dt;
       if(dt>0)state.fps=state.fps*.9+(1/dt)*.1;
       for(const card of cards.values()){
-        if(card.status==='idle')position(card,innerWidth*.5,$('app').clientHeight*.53+(reduceMotion?0:Math.sin(now/2900)*12));
+        if(card.status==='idle'){
+          const corridor=Math.max(0,innerWidth*.20-card.el.offsetWidth/2-24);
+          const dx=reduceMotion?0:Math.sin(state.motionTime*Math.PI*2/18)*Math.min(FLOAT_X_PX,corridor);
+          const dy=reduceMotion?0:Math.sin(state.motionTime*Math.PI*2/15)*Math.min(FLOAT_Y_PX,$('app').clientHeight*.05);
+          position(card,innerWidth*.5+dx,$('app').clientHeight*.53+dy);
+        }
         if(card.status==='sorted'||card.status==='retry'){
           card.waitMs-=dt*1000;
           if(card.waitMs<=0){
@@ -628,8 +672,9 @@
         }
       }
       autoDrop(now);
-      if(state.stream&&state.tracking&&state.mp&&video.readyState>=2&&!state.sendBusy&&now-state.lastSend>=65){
+      if(state.stream&&state.tracking&&state.mp&&video.readyState>=2&&!state.sendBusy&&now-state.lastSend>=33&&video.currentTime!==state.lastVideoTime){
         state.sendBusy=true;state.lastSend=now;state.sendingEpoch=state.cameraEpoch;
+        state.lastVideoTime=video.currentTime;
         const epoch=state.cameraEpoch;
         const watchdog=setTimeout(()=>{
           state.sendStalled=true;
@@ -666,10 +711,11 @@
     try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else say('Use landscape mode for a larger play area.','');}catch(_){say('Full screen is not available here.','');}
   };
   $('restart').onclick=()=>start(state.cameraWanted);$('playAgain').onclick=()=>start(state.cameraWanted);
-  $('review').onclick=()=>showReview(0);$('reviewBack').onclick=()=>{if(state.reviewIndex>0)showReview(state.reviewIndex-1);else screen('finish');};
+  $('boardReview').onclick=()=>showReview(0);$('boardReplay').onclick=()=>start(state.cameraWanted);
+  $('review').onclick=()=>showReview(0);$('reviewBack').onclick=()=>{if(state.reviewIndex>0)showReview(state.reviewIndex-1);else showBoard();};
   $('reviewNext').onclick=()=>{if(state.reviewIndex<3)showReview(state.reviewIndex+1);else showReady();};
   $('witnesses').onclick=()=>{$('stationMessage').hidden=false;$('witnesses').hidden=true;};
-  $('backToResults').onclick=()=>screen('finish');
+  $('backToResults').onclick=()=>showBoard();
   window.addEventListener('keydown',event=>{if(event.key==='Escape'){cancelDrag();resetHand();if(state.screen==='game')pause(!state.paused);}});
   window.addEventListener('resize',()=>{cancelDrag();resetHand();});
   document.addEventListener('visibilitychange',()=>{if(document.hidden&&state.running)pause(true);});
