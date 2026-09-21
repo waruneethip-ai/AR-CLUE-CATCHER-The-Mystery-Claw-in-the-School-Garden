@@ -14,6 +14,22 @@
 @media(max-height:600px) and (min-width:650px){.welcome{padding:15px 4vw}.welcome-sheet{max-width:1000px}.welcome h1{font-size:45px;margin:14px 0 10px}.welcome h2{font-size:20px}.tagline{font-size:13px;margin:7px 0 14px}.steps{margin-bottom:14px}.privacy{margin-top:6px;font-size:10px}.text-button{padding-top:10px}.mission-board{padding:25px;max-width:350px}.case-symbol{font-size:40px;margin:9px 0}.mission-board h3{font-size:22px}.mini-categories{margin:15px 0}.mission-note{font-size:12px}.game-header{height:70px}.food,.body{top:23%}.zone{height:27%}.legs,.movement{bottom:12%}.zone-title>span{font-size:20px;width:27px;height:27px}.zone-target{top:47%;bottom:11px}.zone-count{bottom:4px}#feedback{top:16%;font-size:16px;padding:5px 15px}.game-footer{min-height:37px}.result-sheet,.review-sheet,.ready-sheet{padding:15px 28px;max-width:980px}.award{width:38px;height:38px;font-size:28px;margin-bottom:5px;border-radius:12px}.result-sheet h1{font-size:30px;margin:5px}.result-sheet h1 span{font-size:18px}.result-sheet h2{font-size:20px}.summary-grid{margin:13px 0;gap:8px}.summary-item{padding:10px 15px}.summary-item h3{font-size:13px;margin-bottom:5px}.summary-item p{font-size:17px}.actions{margin-top:14px}.actions button{padding:11px 20px;font-size:14px}.review-sheet h2{font-size:22px;margin:10px 0 15px}.review-card{padding:14px}.review-icon{font-size:32px}.review-card h3{font-size:19px;margin:5px}.review-card p{font-size:30px;margin:8px}.down-arrow{font-size:22px}.ready-sheet h1{margin:10px 0;font-size:27px}.question-summary{gap:9px;margin:13px 0}.question-summary>div{padding:10px}.question-summary p{font-size:17px}.ready-sheet>.primary{padding:12px 20px;font-size:14px}.next-steps{margin:13px 0}.ready-sheet .text-button{padding-top:10px}#stationMessage{margin:8px;font-size:18px}#teacherPanel{top:65px;width:240px;padding:9px}.panel-top~button{min-height:35px;padding:7px 11px;margin:4px 0}}
 @media(orientation:portrait){#orientationNote{display:block}.welcome{align-items:flex-start;padding:32px 25px}.welcome-sheet{grid-template-columns:1fr;max-width:560px;gap:30px}.welcome h1{font-size:58px}.mission-board{display:none}.welcome-copy{margin:auto}.welcome .privacy{font-size:11px}.game-header{height:105px;gap:10px;padding:10px 3%;flex-wrap:wrap}.brand{font-size:34px}.brand span{font-size:9px}.points-card{display:none}.score-card{gap:6px}.score-card>span{font-size:9px}.score-card strong{font-size:22px}.time-card strong{font-size:21px}.teacher-toggle span{display:none}.zone{width:32%;height:24%;padding:8px;border-radius:16px}.food,.body{top:24%}.legs,.movement{bottom:17%}.zone-title{flex-direction:column;gap:6px}.zone h2{font-size:16px;text-align:center}.zone-title>span{font-size:24px}.zone-target{font-size:8px;left:8px;right:8px;top:51%;text-align:center;letter-spacing:0}.clue-card{width:29%;font-size:20px;gap:0;padding:6px;height:67px}.clue-card:before{display:none}.game-footer{bottom:24px;height:11%;flex-direction:column;gap:5px;justify-content:center}.game-footer p{max-width:90%;font-size:11px}#feedback{top:17%;font-size:15px}.result-sheet,.ready-sheet{padding:20px 15px;margin:auto}.summary-grid,.question-summary{grid-template-columns:1fr;gap:8px}.result-sheet h1{font-size:30px}.result-sheet h1 span{display:block;font-size:17px}.result-sheet h2{font-size:20px}.summary-item{padding:10px 15px}.summary-item h3{font-size:13px;margin-bottom:4px}.summary-item p{font-size:16px}.actions{gap:8px}.actions button{font-size:12px;padding:12px 14px}.review-sheet{padding:25px 15px}.review-sheet h2{font-size:22px}.review-card p{font-size:25px}.ready-sheet h1{font-size:23px}.next-steps{font-size:12px;letter-spacing:0}.next-steps span{margin:0 2px}.question-summary p{font-size:18px}.ready-sheet>.primary{font-size:14px;padding:13px 16px}.finish,.ready-screen{padding:20px 14px 40px;align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){button{transition:none}.review-card{animation:none}}
+/* Easy touch edition: one large clue, five visible fingertips, palm carry and hold ring. */
+.clue-card{width:clamp(220px,24vw,280px);height:clamp(90px,14vh,112px);font-size:clamp(28px,3.6vw,46px);border-width:3px;text-transform:uppercase;overflow:visible;left:0;top:0}
+.clue-card:after{content:'';position:absolute;bottom:5px;left:12px;width:var(--grab,0%);max-width:calc(100% - 24px);height:5px;border-radius:4px;background:#29a78b}
+.clue-card.touching{border-color:#d6a927;box-shadow:0 0 0 7px #ffdb7966,0 6px 0 #d8bb79}
+.clue-card.grabbed{border-color:#148568;box-shadow:0 0 0 8px #56d2ad55,0 10px 24px #163e6529}
+.clue-card.retry{border-color:#d29069;background:#fff5e8}.clue-card.sorted:before{font-size:24px;width:30px;height:34px}
+.round-card{display:flex;flex-direction:column;gap:6px;text-align:center}.round-card strong{font-size:19px;white-space:nowrap}.round-card span{font-size:11px;font-weight:900;white-space:nowrap;color:#725d28;padding:4px 7px;background:#fff3cc;border-radius:7px}.round-card span.detected{background:#d5f6e5;color:#0c694d}
+.game-header{gap:clamp(10px,1.8vw,27px)}.steps{gap:12px}.steps li{font-size:16px;gap:6px}.steps small{font-size:10px}.steps li b{width:29px;height:29px;font-size:14px}
+.zone{width:25%;height:25%}.food,.body{top:23%}.legs,.movement{bottom:13%}.zone.hovering{outline:4px solid #e7ba38;box-shadow:0 0 0 7px #ffe17766}.zone.hovering .zone-target{font-size:16px;letter-spacing:1px;font-weight:900;color:#755500;border-color:#d9b338}
+#handOverlay{position:absolute;inset:0;pointer-events:none;z-index:31}.finger-dot{position:absolute;top:0;left:0;width:18px;height:18px;border:3px solid white;border-radius:50%;background:#00acec;box-shadow:0 0 0 2px #163e65,0 0 11px #fff;will-change:transform}.finger-1{background:#ffcc35}.finger-2{background:#53d897}.finger-3{background:#b091ff}.finger-4{background:#ff86b0}#palmCursor{position:absolute;left:0;top:0;width:24px;height:24px;border:2px solid white;border-radius:50%;box-shadow:0 0 0 1px #193d60;background:#193d6030}
+#holdRing{position:absolute;left:0;top:0;z-index:35;pointer-events:none;width:64px;height:64px;border-radius:50%;padding:6px;background:conic-gradient(#188065 var(--hold,0deg),#d1e9ec 0);box-shadow:0 0 0 3px white,0 4px 15px #163e6533}#holdRing span{display:grid;place-items:center;background:white;border-radius:50%;width:100%;height:100%;font-size:16px;font-weight:900;color:#196650}
+#debugLayer{position:absolute;inset:0;z-index:40;pointer-events:none}#debugLayer>div{position:absolute;border:2px dashed #cf2591;background:#cf259106}#debugLayer #debugCardBox{border-color:#da4f16;background:#da4f1610}#debugReadout{position:absolute;z-index:41;pointer-events:none;left:50%;top:106px;transform:translateX(-50%);background:#122f49ee;color:#dcf5ff;font:11px/1.4 monospace;border-radius:10px;padding:10px;margin:0;max-width:95%}
+#teacherPanel{max-height:calc(100% - 110px);overflow-y:auto}
+@media(max-width:1050px){.game-header{gap:15px}.round-card strong{font-size:16px}.zone{width:26%;height:26%}.zone h2{font-size:24px}.clue-card{font-size:34px}.steps{display:grid;grid-template-columns:1fr 1fr;max-width:380px;row-gap:12px}.steps small{font-size:11px}.steps li{font-size:17px}}
+@media(max-height:600px) and (min-width:650px){.steps{display:flex;gap:9px;max-width:none}.steps li{font-size:13px}.steps small{font-size:9px}.steps li b{width:25px;height:25px}.round-card strong{font-size:14px}.round-card span{font-size:9px;padding:2px}.zone h2{font-size:18px}.clue-card{width:220px;height:90px;font-size:32px}.zone{height:27%}.zone-target{font-size:8px}.zone.hovering .zone-target{font-size:12px}.game-header{gap:12px}#debugReadout{top:75px;font-size:9px}#teacherPanel{max-height:calc(100% - 80px)}}
+@media(orientation:portrait){.zone{width:31%;height:22%}.food,.body{top:25%}.legs,.movement{bottom:18%}.zone h2{font-size:14px}.clue-card{width:clamp(154px,42vw,240px);height:90px;font-size:26px}.brand{display:none}.score-card>span{display:none}.round-card strong{font-size:14px}.game-header{justify-content:space-between;gap:5px}.round-card span{font-size:9px}.zone.hovering .zone-target{font-size:10px}.zone-target{letter-spacing:0}.clue-card:after{display:none}.next-steps{font-size:11px}}
 </style>
 </head>
 <body>
@@ -28,7 +44,7 @@
         <h1>AR CLUE<br><span>CATCHER</span><i aria-hidden="true">✦</i></h1>
         <h2>Sort the Mystery Words!</h2>
         <p class="tagline">Catch • Sort • Get Ready to Investigate!</p>
-        <ol class="steps"><li><b>1</b><span>Catch<br><small>จีบนิ้วหยิบคำ</small></span></li><li><b>2</b><span>Move<br><small>ย้ายไปที่หมวด</small></span></li><li><b>3</b><span>Release<br><small>กางนิ้วเพื่อวาง</small></span></li></ol>
+        <ol class="steps"><li><b>1</b><span>Show<br><small>แสดงมือ</small></span></li><li><b>2</b><span>Touch<br><small>แตะด้วยนิ้วไหนก็ได้</small></span></li><li><b>3</b><span>Move<br><small>ย้ายเข้าหมวด</small></span></li><li><b>4</b><span>Hold<br><small>ค้างเพื่อวาง</small></span></li></ol>
         <button id="start" class="primary">START INVESTIGATION <span>→</span></button>
         <button id="touchStart" class="text-button">Use mouse / touch instead · เล่นโดยไม่ใช้กล้อง</button>
         <p class="privacy">No recording • Camera stays on your device<br>เล่นแนวนอน • อนุญาตกล้อง • ใช้อินเทอร์เน็ตเพื่อโหลดการตรวจจับมือ</p>
@@ -38,12 +54,12 @@
         <p class="board-eyebrow">YOUR MISSION</p><div class="case-symbol" aria-hidden="true">🔎</div>
         <h3>12 clues.<br>4 categories.<br><em>One investigation!</em></h3>
         <div class="mini-categories"><span>🍎 FOOD</span><span>🐾 BODY PARTS</span><span>👣 LEGS</span><span>➜ MOVEMENT</span></div>
-        <p class="mission-note">Pinch a card.<br>Find where it belongs.</p><div class="stamp">CLUE<br>CREW ★</div>
+        <p class="mission-note">Any finger. One word.<br>Touch → Move → Hold.</p><div class="stamp">EASY<br>TOUCH ★</div>
       </aside>
     </div>
   </section>
   <section id="game" class="screen" hidden aria-label="Clue sorting game">
-    <header class="game-header"><div class="brand">⌕ <span>CLUE<br><strong>CATCHER</strong></span></div><div class="score-card"><span>CLUES FOUND</span><strong id="clues">0 <small>/ 12</small></strong><div id="progress" aria-hidden="true"></div></div><div class="points-card"><span>★ DETECTIVE POINTS</span><strong id="points">0</strong></div><div class="time-card"><span>TIME</span><strong id="timer">02:30</strong><small id="pacing">Pacing only</small></div><button id="teacherToggle" class="teacher-toggle" aria-expanded="false" aria-controls="teacherPanel">⚙ <span>Teacher</span></button></header>
+    <header class="game-header"><div class="brand">⌕ <span>CLUE<br><strong>CATCHER</strong></span></div><div class="round-card"><strong id="roundLabel">CLUE 1 / 12</strong><span id="handStatus" hidden>SHOW YOUR HAND ✋</span></div><div class="score-card"><span>CLUES FOUND</span><strong id="clues">0 <small>/ 12</small></strong><div id="progress" aria-hidden="true"></div></div><div class="points-card"><span>★ DETECTIVE POINTS</span><strong id="points">0</strong></div><div class="time-card"><span>TIME</span><strong id="timer">02:30</strong><small id="pacing">Pacing only</small></div><button id="teacherToggle" class="teacher-toggle" aria-expanded="false" aria-controls="teacherPanel">⚙ <span>Teacher</span></button></header>
     <div id="zones">
       <div class="zone food" data-category="food" tabindex="0" role="button" aria-label="Drop into Food"><div class="zone-title"><span>🍎</span><h2>FOOD</h2></div><div class="zone-target">DROP CLUE HERE</div><span class="zone-count">0 / 4</span></div>
       <div class="zone body" data-category="body" tabindex="0" role="button" aria-label="Drop into Body Parts"><div class="zone-title"><span>🐾</span><h2>BODY PARTS</h2></div><div class="zone-target">DROP CLUE HERE</div><span class="zone-count">0 / 2</span></div>
@@ -52,15 +68,17 @@
     </div>
     <div id="cards" aria-label="Floating clue cards"></div>
     <div id="feedback" role="status" aria-live="polite"></div>
-    <div id="cursor" hidden aria-hidden="true"><span></span></div>
-    <footer class="game-footer"><span id="modeStatus">MOUSE / TOUCH MODE</span><p id="handHint">Drag a word into a category.</p><span class="gesture-guide">PINCH <b>→</b> MOVE <b>→</b> RELEASE</span></footer>
-    <aside id="teacherPanel" hidden aria-label="Teacher controls"><div class="panel-top"><strong>TEACHER CONTROLS</strong><button id="closeTeacher" aria-label="Close teacher controls">✕</button></div><button id="pause">Ⅱ Pause</button><button id="cameraToggle">Camera: Off</button><button id="trackingToggle">Hand tracking: On</button><button id="soundToggle">Sound: On</button><button id="fullscreen">⛶ Full screen</button><button id="restart">↻ Restart Game</button><p>กล้องประมวลผลในเครื่อง<br>ไม่มีการบันทึกวิดีโอ</p></aside>
+    <div id="handOverlay" hidden aria-hidden="true"><span id="palmCursor"></span></div>
+    <div id="holdRing" hidden aria-label="Hold to drop progress"><span>0%</span></div>
+    <div id="debugLayer" hidden aria-hidden="true"><div id="debugCardBox"></div><div id="debugZone0"></div><div id="debugZone1"></div><div id="debugZone2"></div><div id="debugZone3"></div></div><pre id="debugReadout" hidden></pre>
+    <footer class="game-footer"><span id="modeStatus">TOUCH / MOUSE MODE</span><p id="handHint">Move the word to a category. Hold briefly.</p><span class="gesture-guide">TOUCH <b>→</b> MOVE <b>→</b> HOLD</span></footer>
+    <aside id="teacherPanel" hidden aria-label="Teacher controls"><div class="panel-top"><strong>TEACHER CONTROLS</strong><button id="closeTeacher" aria-label="Close teacher controls">✕</button></div><button id="pause">Ⅱ Pause</button><button id="cameraToggle">Camera: Off</button><button id="trackingToggle">Hand tracking: On</button><button id="soundToggle">Sound: On</button><button id="debugToggle">Teacher debug: Off</button><button id="fullscreen">⛶ Full screen</button><button id="restart">↻ Restart Game</button><p>กล้องประมวลผลในเครื่อง<br>ไม่มีการบันทึกวิดีโอ</p></aside>
   </section>
   <section id="loading" class="overlay" hidden><div class="small-sheet"><div class="spinner" aria-hidden="true"></div><p class="eyebrow">GETTING READY</p><h2 id="loadTitle">Opening your camera…</h2><p id="loadDetail">Allow camera access to catch clues with your hand.</p><button id="skipCamera" class="secondary">Play with mouse / touch</button></div></section>
   <section id="paused" class="overlay" hidden><div class="small-sheet"><p class="eyebrow">TAKE A BREATH</p><h2>Investigation paused</h2><p>เปลี่ยนผู้เล่นได้ แล้วกด Resume เพื่อเล่นต่อ</p><button id="resume" class="primary">▶ RESUME</button></div></section>
   <section id="finish" class="screen finish" hidden><div class="result-sheet"><span class="award" aria-hidden="true">★</span><p class="eyebrow">CASE READY!</p><h1>12 / 12 <span>CLUES SORTED</span></h1><h2>Great work, Detectives!</h2><div id="summary" class="summary-grid"></div><p>Now you are ready to ask the witnesses!</p><div class="actions"><button id="playAgain" class="secondary">↻ PLAY AGAIN</button><button id="review" class="primary">REVIEW CLUES →</button></div></div></section>
   <section id="reviewScreen" class="screen review-screen" hidden><div class="review-sheet"><p class="eyebrow">T — THINK & ASK</p><h2>NOW, TURN THE CLUES<br>INTO QUESTIONS!</h2><div id="reviewCard"></div><div class="actions"><button id="reviewBack" class="secondary">← BACK</button><button id="reviewNext" class="primary">NEXT CLUE →</button></div></div></section>
-  <section id="readyScreen" class="screen ready-screen" hidden><div class="ready-sheet"><p class="eyebrow">T → E · EXCHANGE INFORMATION</p><h1>READY TO INVESTIGATE?</h1><div id="questionSummary" class="question-summary"></div><p class="next-steps">ASK <span>→</span> LISTEN <span>→</span> REPORT <span>→</span> RECORD</p><button id="witnesses" class="primary">ASK THE WITNESSES! →</button><p id="stationMessage" role="status" hidden>Go to your witness station!<br><small>ไปที่ฐานพยาน แล้วเริ่มถามคำถามกันเลย!</small></p><button id="backToResults" class="text-button">← Back to clues</button></div></section>
+  <section id="readyScreen" class="screen ready-screen" hidden><div class="ready-sheet"><p class="eyebrow">T → E · EXCHANGE INFORMATION</p><h1>READY TO INVESTIGATE?</h1><div id="questionSummary" class="question-summary"></div><p class="next-steps">ASK <span>→</span> LISTEN <span>→</span> REMEMBER <span>→</span> REPORT</p><button id="witnesses" class="primary">ASK THE WITNESSES! →</button><p id="stationMessage" role="status" hidden>Go to your witness station!<br><small>ไปที่ฐานพยาน แล้วเริ่มถามคำถามกันเลย!</small></p><button id="backToResults" class="text-button">← Back to clues</button></div></section>
   <div id="orientationNote">↻ Rotate your screen for more space · แนะนำแนวนอน</div>
 </main>
 <script>(function (root, factory) {
@@ -70,12 +88,14 @@
   if (root) root.ClueCore = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
+  // CATEGORY DATA: labels and question patterns for the lesson transition.
   const CATEGORIES = Object.freeze([
     { id: 'food', label: 'FOOD', icon: '🍎', question: 'What does it eat?' },
     { id: 'body', label: 'BODY PARTS', icon: '🐾', question: 'What body parts does it have?' },
     { id: 'legs', label: 'LEGS', icon: '👣', question: 'How many legs does it have?' },
     { id: 'movement', label: 'MOVEMENT', icon: '➜', question: 'How does it move?' }
   ].map(Object.freeze));
+  // VOCABULARY DATA: exactly twelve clues without mystery animal identities.
   const WORDS = Object.freeze([
     { id: 'fish', text: 'fish', category: 'food' },
     { id: 'meat', text: 'meat', category: 'food' },
@@ -91,9 +111,6 @@
     { id: 'run', text: 'run', category: 'movement' }
   ].map(Object.freeze));
   const WORD_BY_ID = new Map(WORDS.map(word => [word.id, word]));
-  const PINCH_PRESS = 0.38;
-  const PINCH_RELEASE = 0.60;
-  const PINCH_DWELL_MS = 80;
 
   function shuffle(array, rng = Math.random) {
     const result = Array.from(array);
@@ -159,52 +176,28 @@
   function validPoint(point) {
     return point && Number.isFinite(point.x) && Number.isFinite(point.y);
   }
-  function pinchRatio(landmarks, videoW, videoH) {
-    if (!landmarks || ![4, 8, 5, 17].every(i => validPoint(landmarks[i])) ||
-        !Number.isFinite(videoW) || !Number.isFinite(videoH) || videoW <= 0 || videoH <= 0) return Infinity;
-    const distance = (a, b) => Math.hypot((a.x - b.x) * videoW, (a.y - b.y) * videoH);
-    const palm = distance(landmarks[5], landmarks[17]);
-    return palm > 1e-6 ? distance(landmarks[4], landmarks[8]) / palm : Infinity;
+  function palmCenter(landmarks) {
+    const ids=[0,5,9,13,17];
+    if(!ids.every(i=>validPoint(landmarks?.[i])))return null;
+    return ids.reduce((p,i)=>({x:p.x+landmarks[i].x/5,y:p.y+landmarks[i].y/5}),{x:0,y:0});
   }
-
-  class PinchLatch {
-    constructor({ press = PINCH_PRESS, release = PINCH_RELEASE, dwellMs = PINCH_DWELL_MS } = {}) {
-      this.press = press;
-      this.release = release;
-      this.dwellMs = Math.max(0, dwellMs);
-      this.reset();
-    }
-    reset() {
-      this.armed = false;
-      this.latched = false;
-      this.pinchStart = null;
-      this.lastTime = null;
-    }
-    update(ratio, now, eligible = true) {
-      if (!Number.isFinite(ratio) || !Number.isFinite(now) || ratio < 0) {
-        this.reset();
-        return null;
+  function inside(point,rect,padding=0) {
+    return !!point && point.x>=rect.left-padding && point.x<=rect.right+padding &&
+      point.y>=rect.top-padding && point.y<=rect.bottom+padding;
+  }
+  // A continuous hover, not a gesture: lost input, target changes and long gaps reset it.
+  class HoldGate {
+    constructor(duration=400,maxGap=250){this.duration=duration;this.maxGap=maxGap;this.reset();}
+    reset(){this.key=null;this.started=0;this.last=null;this.fired=false;}
+    update(key,now){
+      if(!key||!Number.isFinite(now)){this.reset();return {ready:false,progress:0};}
+      if(this.key!==key||this.last===null||now<this.last||now-this.last>this.maxGap){
+        this.key=key;this.started=now;this.fired=false;
       }
-      if (this.lastTime !== null && now < this.lastTime) this.pinchStart = null;
-      this.lastTime = now;
-      if (ratio > this.release) {
-        const wasLatched = this.latched;
-        this.latched = false;
-        this.armed = true;
-        this.pinchStart = null;
-        return wasLatched ? 'release' : null;
-      }
-      if (this.latched) return null;
-      if (!this.armed || !eligible || ratio >= this.press) {
-        this.pinchStart = null;
-        return null;
-      }
-      if (this.pinchStart === null) this.pinchStart = now;
-      if (now - this.pinchStart < this.dwellMs) return null;
-      this.latched = true;
-      this.armed = false;
-      this.pinchStart = null;
-      return 'grab';
+      this.last=now;
+      const progress=Math.min(1,Math.max(0,(now-this.started)/this.duration));
+      const ready=progress>=1&&!this.fired;if(ready)this.fired=true;
+      return {ready,progress};
     }
   }
 
@@ -214,7 +207,7 @@
   };
   const wristDistance = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
   class HandSelector {
-    constructor({ maxJump = 0.22, ambiguity = 0.065, identityMargin = 0.035 } = {}) {
+    constructor({ maxJump = 0.40, ambiguity = 0.065, identityMargin = 0.035 } = {}) {
       this.maxJump = maxJump;
       this.ambiguity = ambiguity;
       this.identityMargin = identityMargin;
@@ -236,7 +229,6 @@
       if (candidates.length > 2) { this.status = 'ambiguous'; return null; }
       let chosen;
       if (!this.wrist) {
-        candidates.sort((a, b) => a.wrist.x - b.wrist.x || a.wrist.y - b.wrist.y);
         if (candidates.length > 1 && wristDistance(candidates[0].wrist, candidates[1].wrist) < this.ambiguity) {
           this.status = 'ambiguous'; return null;
         }
@@ -264,19 +256,26 @@
       return chosen.hand;
     }
   }
-  return Object.freeze({ CATEGORIES, WORDS, PINCH_PRESS, PINCH_RELEASE, PINCH_DWELL_MS, shuffle, Session, mapPoint, pinchRatio, PinchLatch, HandSelector });
+  return Object.freeze({ CATEGORIES, WORDS, shuffle, Session, mapPoint, palmCenter, inside, HoldGate, HandSelector });
 });
 </script>
 <script>/* AR Clue Catcher — all UI, sound and gameplay are local. Only MediaPipe loads online.
    TEACHER EDITS: title in HTML; words/categories/questions in ClueCore; timer below. */
 (() => {
   'use strict';
-  const GAME_SECONDS = 150;
+  // TEACHER SETTINGS — adjust these values to tune classroom interaction.
+  const TOUCH_RADIUS = 70;       // TOUCH HIT RADIUS: CSS px at a 1280 px-wide display.
+  const GRAB_HOLD_MS = 180;      // AUTO-GRAB DELAY: any fingertip touches the enlarged card.
+  const DROP_HOLD_MS = 400;      // AUTO-DROP DELAY: card CENTER stays in a category.
+  const SMOOTHING = 0.30;        // HAND SMOOTHING: interpolation at a 30 Hz reference rate.
+  const FINGERTIP_LANDMARKS = [4,8,12,16,20]; // Thumb, index, middle, ring, pinky.
+  const GAME_SECONDS = 150;      // TIMER: pacing only; zero never ends the game.
   const MP_ROOT = 'https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/';
   const $ = id => document.getElementById(id);
-  const { CATEGORIES, WORDS, Session, mapPoint, pinchRatio, PinchLatch, HandSelector } = window.ClueCore;
+  const { CATEGORIES, WORDS, Session, mapPoint, palmCenter, inside, HoldGate, HandSelector } = window.ClueCore;
   const session = new Session({ duration: GAME_SECONDS });
-  const latch = new PinchLatch();
+  const grabGate = new HoldGate(GRAB_HOLD_MS);
+  const dropGate = new HoldGate(DROP_HOLD_MS);
   const selector = new HandSelector();
   const video = $('camera');
   const zones = [...document.querySelectorAll('.zone')];
@@ -286,7 +285,12 @@
   const state = { screen:'welcome', running:false, paused:false, loading:false, sound:true, tracking:true,
     cameraWanted:false, stream:null, cameraEpoch:0, generation:0, mp:null, mpPromise:null, scriptPromise:null,
     sendBusy:false, sendStalled:false, sendingEpoch:0, lastSend:0, drag:null, selected:null, smooth:null, lastHand:0, lostSince:0,
-    hoverId:null, hoverSince:0, pointerUntil:0, keyboardId:null, lastTime:0, reviewIndex:0, elapsedPaint:-1 };
+    tips:[], palm:null, confidence:null, blockedUntil:0, pointerUntil:0, keyboardId:null, lastTime:0,
+    reviewIndex:0, elapsedPaint:-1, debug:false, fps:0, debugPaint:0, awaitingHand:false };
+  const fingerDots=FINGERTIP_LANDMARKS.map((landmark,i)=>{
+    const dot=document.createElement('span');dot.className='finger-dot finger-'+i;dot.dataset.landmark=landmark;
+    $('handOverlay').append(dot);return dot;
+  });
   let audioContext;
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const defer = (fn, ms) => { const gen = state.generation; const id = setTimeout(() => {
@@ -296,7 +300,7 @@
   function screen(id) {
     state.screen = id; screenIds.forEach(name => $(name).hidden = name !== id);
     $('teacherPanel').hidden = true; $('teacherToggle').setAttribute('aria-expanded','false');
-    $('cursor').hidden = true;
+    $('handOverlay').hidden = true; $('holdRing').hidden=true; $('debugLayer').hidden=true; $('debugReadout').hidden=true;
   }
   function initAudio() {
     if (!state.sound) return;
@@ -307,7 +311,7 @@
   }
   function chime(kind) {
     if (!state.sound || !audioContext || audioContext.state !== 'running') return;
-    const notes = kind === 'finish' ? [523,659,784,1047] : kind === 'correct' ? [659,880] : [294,247];
+    const notes = kind === 'finish' ? [523,659,784,1047] : kind === 'correct' ? [659,880] : kind==='pickup'?[440,587]:[294,247];
     notes.forEach((freq,i) => {
       const osc = audioContext.createOscillator(), gain = audioContext.createGain();
       const t = audioContext.currentTime + i * .105;
@@ -320,8 +324,10 @@
   }
   function status(mode, hint) { $('modeStatus').textContent = mode; $('handHint').textContent = hint; }
   function resetHand() {
-    latch.reset(); selector.reset(); state.smooth=null; state.lastHand=0; state.lostSince=0;
-    state.hoverId=null; state.hoverSince=0; $('cursor').hidden=true;
+    grabGate.reset(); dropGate.reset(); selector.reset(); state.smooth=null; state.tips=[];state.palm=null;
+    state.confidence=null; state.lastHand=0; state.lostSince=0; $('handOverlay').hidden=true;
+    $('handStatus').textContent='SHOW YOUR HAND ✋'; $('handStatus').classList.remove('detected');
+    $('holdRing').hidden=true;
   }
   function stopCamera() {
     state.cameraEpoch++;
@@ -352,7 +358,7 @@
       const hands = new window.Hands({ locateFile: file=>MP_ROOT+file });
       hands.setOptions({ maxNumHands:2, modelComplexity:0, minDetectionConfidence:.6, minTrackingConfidence:.6 });
       hands.onResults(results=> {
-        if (state.sendingEpoch===state.cameraEpoch && state.stream && state.tracking) processHands(results.multiHandLandmarks || []);
+        if (state.sendingEpoch===state.cameraEpoch && state.stream && state.tracking) processHands(results.multiHandLandmarks || [],results.multiHandedness||[]);
       });
       try { await hands.initialize(); state.mp=hands; return hands; }
       catch(error) { try { await hands.close(); } catch(_) {} throw error; }
@@ -361,6 +367,7 @@
   }
   async function connectCamera() {
     stopCamera(); state.cameraWanted=true; const epoch=state.cameraEpoch;
+    state.awaitingHand=session.score===0;
     state.loading=true; $('loading').hidden=false; $('loadTitle').textContent='Opening your camera…';
     $('loadDetail').textContent='Allow camera access to catch clues with your hand.';
     try {
@@ -383,7 +390,8 @@
         await timeout(initializeHands(),20000,'Hand tracking timed out.');
       }
       if (epoch!==state.cameraEpoch) return;
-      status(state.tracking?'CAMERA + HAND TRACKING':'CAMERA + TOUCH',state.tracking?'Show one open hand, then pinch a card.':'Drag a word with mouse / touch.');
+      if(!state.tracking)state.awaitingHand=false;
+      status(state.tracking?'CAMERA + HAND TRACKING':'TOUCH / MOUSE MODE',state.tracking?'Touch the word with ANY finger.':'Drag to a category and hold briefly.');
     } catch(error) {
       if (epoch!==state.cameraEpoch) return;
       cameraFailure(error);
@@ -394,7 +402,7 @@
   function cameraFailure(error) {
     console.warn('AR camera fallback:',error.message || error);
     stopCamera(); state.cameraWanted=false; state.loading=false; $('loading').hidden=true;
-    status('MOUSE / TOUCH MODE','Camera mode unavailable. Touch mode is ready.');
+    state.awaitingHand=false;status('TOUCH / MOUSE MODE','Camera mode unavailable. Touch mode is ready.');
     updateControls();
   }
   function updateControls() {
@@ -402,25 +410,29 @@
     $('trackingToggle').textContent = 'Hand tracking: '+(state.tracking?'On':'Off');
     $('soundToggle').textContent = 'Sound: '+(state.sound?'On':'Off');
     $('pause').textContent = state.paused?'▶ Resume':'Ⅱ Pause';
+    $('debugToggle').textContent='Teacher debug: '+(state.debug?'On':'Off');
+    $('handStatus').hidden=!state.stream||!state.tracking;
   }
   function resetGame() {
     state.generation++; clearDelayed(); cancelDrag(); stopCamera();
     session.reset(); cards.clear(); $('cards').replaceChildren(); state.elapsedPaint=-1;
-    state.running=true; state.paused=false; state.loading=false; state.keyboardId=null;
+    state.running=true; state.paused=false; state.loading=false; state.keyboardId=null;state.awaitingHand=false;
     $('paused').hidden=true; $('loading').hidden=true; $('feedback').className=''; $('feedback').textContent='';
     $('stationMessage').hidden=true; $('witnesses').hidden=false; resetHand(); screen('game');
     zones.forEach(zone=>zone.classList.remove('flash','hovering'));
-    for(let slot=0;slot<3;slot++) spawn(slot);
+    spawn(0);
     updateScore(); updateTimer(); updateControls();
-    status('MOUSE / TOUCH MODE','Drag a word into a category.');
+    status('TOUCH / MOUSE MODE','Drag the word to a category. Hold briefly to drop.');
   }
   function start(useCamera) { initAudio(); resetGame(); state.cameraWanted=useCamera; if(useCamera) connectCamera(); }
   function spawn(slot) {
-    const word=session.nextWord(); if(!word) return;
+    if(cards.size)return;const word=session.nextWord(); if(!word) return;
     const el=document.createElement('button'); el.className='clue-card'; el.textContent=word.text;
     el.dataset.word=word.id; el.setAttribute('aria-label',word.text+'. Drag to a category, or press Enter then choose a category.');
-    const card={word,slot,el,x:0,y:0,phase:slot*2.1,status:'idle',finishAt:0};
+    const card={word,slot,el,x:0,y:0,status:'idle',waitMs:0};
     cards.set(word.id,card); $('cards').append(el);
+    grabGate.reset();dropGate.reset();state.blockedUntil=performance.now()+200;
+    $('roundLabel').textContent='CLUE '+(session.score+1)+' / 12';
     el.addEventListener('pointerdown',event=>pointerStart(event,card));
     el.addEventListener('keydown',event=> {
       if ((event.key==='Enter'||event.key===' ') && playable() && card.status==='idle') {
@@ -448,53 +460,53 @@
   }
   function position(card, x,y) { card.x=x;card.y=y;card.el.style.transform=`translate(${x-card.el.offsetWidth/2}px,${y-card.el.offsetHeight/2}px)`; }
   function cardAt(point) {
-    return [...cards.values()].filter(c=>c.status==='idle').sort((a,b)=>Math.hypot(a.x-point.x,a.y-point.y)-Math.hypot(b.x-point.x,b.y-point.y)).find(c=>
-      Math.abs(c.x-point.x)<c.el.offsetWidth/2+22 && Math.abs(c.y-point.y)<c.el.offsetHeight/2+20);
+    return [...cards.values()].find(c=>c.status==='idle'&&inside(point,cardRect(c),touchRadius()));
   }
+  function touchRadius(){return Math.max(45,Math.min(80,TOUCH_RADIUS*innerWidth/1280));}
+  function cardRect(card){return {left:card.x-card.el.offsetWidth/2,right:card.x+card.el.offsetWidth/2,top:card.y-card.el.offsetHeight/2,bottom:card.y+card.el.offsetHeight/2};}
   function zoneAt(point) {
-    return zones.find(el=>{const r=el.getBoundingClientRect();return point.x>=r.left-12&&point.x<=r.right+12&&point.y>=r.top-12&&point.y<=r.bottom+12;});
+    return zones.find(el=>inside(point,el.getBoundingClientRect()));
   }
-  function highlight(point) { const zone=point?zoneAt(point):null; zones.forEach(el=>el.classList.toggle('hovering',el===zone)); }
+  function highlight(point) { const zone=point?zoneAt(point):null; zones.forEach(el=>{el.classList.toggle('hovering',el===zone);el.querySelector('.zone-target').textContent=el===zone?'DROP HERE':'HOLD CLUE HERE';}); }
   function grab(card,source,point,pointerId) {
     if(!playable()||state.drag||card.status!=='idle')return false;
     if(state.keyboardId)cancelDrag();
-    card.status='dragging'; card.el.classList.add('grabbed');
+    card.status='dragging'; card.el.classList.remove('touching');card.el.classList.add('grabbed');
     state.drag={id:card.word.id,source,pointerId,offsetX:source==='pointer'?card.x-point.x:0,offsetY:source==='pointer'?card.y-point.y:0,point};
-    position(card,point.x+state.drag.offsetX,point.y+state.drag.offsetY); return true;
+    state.awaitingHand=false;grabGate.reset();dropGate.reset();card.el.style.setProperty('--grab','0%');
+    position(card,point.x+state.drag.offsetX,point.y+state.drag.offsetY);say('GOT IT! Move & hold.','pickup');chime('pickup');return true;
   }
   function moveDrag(point) {
     if(!state.drag)return; const card=cards.get(state.drag.id);if(!card)return;
-    state.drag.point=point;position(card,point.x+state.drag.offsetX,point.y+state.drag.offsetY);highlight(point);
+    state.drag.point=point;position(card,point.x+state.drag.offsetX,point.y+state.drag.offsetY);
   }
   function cancelDrag() {
     const id=state.drag?.id || state.keyboardId;const card=cards.get(id);
-    if(card && card.status!=='sorted'){card.status='idle';card.el.classList.remove('grabbed');}
+    if(card && card.status==='dragging'){card.status='idle';card.el.classList.remove('grabbed');}
+    if(card)card.el.classList.remove('grabbed');
     const old=state.drag; state.drag=null; state.keyboardId=null;
     if(old?.source==='pointer'&&card?.el.hasPointerCapture?.(old.pointerId))card.el.releasePointerCapture(old.pointerId);
-    highlight(null);
+    highlight(null);dropGate.reset();grabGate.reset();$('holdRing').hidden=true;
   }
   function releaseDrag(point) {
-    if(!state.drag)return;const id=state.drag.id;const zone=zoneAt(point);cancelDrag();
-    if(!playable())return;
-    if(zone)drop(id,zone.dataset.category); else say('Move it into a category.','');
+    if(!state.drag)return;cancelDrag();
+    if(playable())say('Hold over a category until the ring fills.','');
   }
   function drop(id,category) {
-    const card=cards.get(id);if(!playable()||!card||card.status==='sorted')return;
+    const card=cards.get(id);if(!playable()||!card||card.status==='sorted'||card.status==='retry')return;
     const result=session.drop(id,category);
     if(result.duplicate)return;
     if(result.correct){
       card.status='sorted';card.el.classList.remove('grabbed');card.el.classList.add('sorted');
       const zone=zones.find(el=>el.dataset.category===category),r=zone.getBoundingClientRect();
       position(card,r.left+r.width/2,r.top+r.height*.65);
-      card.finishAt=session.elapsed+.7;
+      card.waitMs=750;
       zone.classList.add('flash');defer(()=>zone.classList.remove('flash'),700);
       chime('correct');say('✓ CORRECT! Great clue!','correct');updateScore();
-      // Confirmation lingers for 0.7 s; generation guard prevents stale restart callbacks.
-      defer(()=>{cards.delete(id);card.el.remove();spawn(card.slot);if(session.complete)finish();},700);
-    }else{card.status='idle';card.el.classList.remove('grabbed');chime('wrong');say('✗ NOT YET! Try again!','wrong');}
+    }else{card.status='retry';card.waitMs=700;card.el.classList.remove('grabbed');card.el.classList.add('retry');chime('wrong');say('✗ NOT YET! Try another category.','wrong');}
   }
   function pointerStart(event,card) {
-    if(event.button!==0||!playable()||state.drag?.source==='pointer')return;
+    if(event.button!==0||!playable()||state.drag?.source==='pointer'||card.status!=='idle')return;
     event.preventDefault();initAudio();cancelDrag();resetHand();state.pointerUntil=performance.now()+1000;
     if(grab(card,'pointer',{x:event.clientX,y:event.clientY},event.pointerId))card.el.setPointerCapture(event.pointerId);
   }
@@ -512,35 +524,64 @@
   zones.forEach(zone=>zone.addEventListener('keydown',event=>{
     if(event.key==='Enter'||event.key===' '){event.preventDefault();zone.click();}
   }));
-  function processHands(hands) {
+  // All FIVE fingertips can catch; the carried card follows the averaged PALM center.
+  function processHands(hands,handedness=[]) {
     const now=performance.now();
-    if(!playable()||!$('teacherPanel').hidden||state.drag?.source==='pointer'||now<state.pointerUntil||!state.tracking){$('cursor').hidden=true;latch.reset();return;}
+    if(!playable()||!$('teacherPanel').hidden||state.drag?.source==='pointer'||now<state.pointerUntil||!state.tracking){$('handOverlay').hidden=true;grabGate.reset();return;}
     const hand=selector.select(hands,now);
-    if(!hand){
+    const lm=hand&&(hand.landmarks||hand), rawPalm=palmCenter(lm);
+    if(!hand||!rawPalm||!FINGERTIP_LANDMARKS.every(i=>Number.isFinite(lm[i]?.x)&&Number.isFinite(lm[i]?.y))){
       if(!state.lostSince)state.lostSince=now;
       if(state.drag?.source==='hand')cancelDrag();
-      state.smooth=null;latch.reset();$('cursor').hidden=true;state.hoverId=null;
-      $('handHint').textContent=hands.length>1?'Show one hand at a time.':'Looking for your hand… แสดงมือให้กล้องเห็น';
-      if(now-state.lostSince>700){selector.reset();state.lostSince=now;}
+      state.smooth=null;state.tips=[];state.palm=null;grabGate.reset();dropGate.reset();$('handOverlay').hidden=true;
+      $('handStatus').textContent='SHOW YOUR HAND ✋';$('handStatus').classList.remove('detected');
+      $('handHint').textContent=hands.length>1?'One player at a time. Show your hand clearly.':'SHOW YOUR HAND ✋ แสดงมือให้กล้องเห็น';
+      if(now-state.lostSince>350){selector.reset();state.lostSince=now;}
       return;
     }
-    state.lostSince=0; const lm=hand.landmarks||hand;
-    const point=mapPoint(lm[8].x,lm[8].y,video.videoWidth||1280,video.videoHeight||720,innerWidth,$('app').clientHeight,true);
-    if(!point||!Number.isFinite(point.x)||!Number.isFinite(point.y))return;
-    const dt=state.lastHand?Math.min(150,now-state.lastHand):50;
-    const alpha=1-Math.exp(-dt/48);
-    const smooth=state.smooth?{x:state.smooth.x+(point.x-state.smooth.x)*alpha,y:state.smooth.y+(point.y-state.smooth.y)*alpha}:point;
-    state.smooth=smooth;state.lastHand=now;
-    const cursor=$('cursor');cursor.hidden=false;cursor.style.transform=`translate(${smooth.x-20}px,${smooth.y-20}px)`;
-    const target=cardAt(smooth);
-    if(target?.word.id!==state.hoverId){state.hoverId=target?.word.id||null;state.hoverSince=now;}
-    const eligible=!!state.drag||!!target&&now-state.hoverSince>70;
-    const action=latch.update(pinchRatio(lm,video.videoWidth||1280,video.videoHeight||720),now,eligible);
-    if(action==='grab'&&target)grab(target,'hand',smooth);
-    if(state.drag?.source==='hand')moveDrag(smooth);
-    if(action==='release'&&state.drag?.source==='hand')releaseDrag(smooth);
-    cursor.className=state.drag?.source==='hand'?'holding':target?'hover':'';
-    $('handHint').textContent=state.drag?.source==='hand'?'Move to a category. Open your fingers to release.':target?'Pinch thumb + index to catch.':'Open your hand. Aim at a clue card.';
+    state.lostSince=0;state.awaitingHand=false;
+    const convert=p=>mapPoint(p.x,p.y,video.videoWidth||1280,video.videoHeight||720,innerWidth,$('app').clientHeight,true);
+    const points=FINGERTIP_LANDMARKS.map(i=>convert(lm[i])),palm=convert(rawPalm);
+    if(!palm||points.some(p=>!p))return;
+    const dt=state.lastHand?Math.min(150,now-state.lastHand):33;
+    const alpha=1-Math.pow(1-SMOOTHING,dt/(1000/30));
+    const blend=(old,next)=>old?{x:old.x+(next.x-old.x)*alpha,y:old.y+(next.y-old.y)*alpha}:next;
+    state.tips=points.map((p,i)=>blend(state.tips[i],p));state.palm=blend(state.palm,palm);state.lastHand=now;
+    state.confidence=handedness[selector.index]?.score??null;
+    $('handOverlay').hidden=false;$('handStatus').hidden=false;$('handStatus').textContent='HAND DETECTED ✓';$('handStatus').classList.add('detected');
+    state.tips.forEach((p,i)=>{fingerDots[i].style.transform=`translate(${p.x-9}px,${p.y-9}px)`;});
+    $('palmCursor').style.transform=`translate(${state.palm.x-12}px,${state.palm.y-12}px)`;
+    const card=[...cards.values()][0];
+    if(!state.drag&&card?.status==='idle'&&now>=state.blockedUntil){
+      const touching=state.tips.some(p=>cardAt(p)===card);
+      const hold=grabGate.update(touching?card.word.id:null,now);
+      card.el.classList.toggle('touching',touching);card.el.style.setProperty('--grab',hold.progress*100+'%');
+      if(hold.ready)grab(card,'hand',state.palm);
+    }else grabGate.reset();
+    if(state.drag?.source==='hand')moveDrag(state.palm);
+    $('handHint').textContent=state.drag?.source==='hand'?'Move & HOLD over a category. วางให้อัตโนมัติ':'Touch the word with ANY finger. ใช้นิ้วไหนก็ได้';
+  }
+  function autoDrop(now){
+    if(!state.drag)return;
+    const card=cards.get(state.drag.id);if(!card)return;
+    // No dwell can finish on a frozen/old hand sample. Pointer input stays valid while held down.
+    if(state.drag.source==='hand'&&now-state.lastHand>250){dropGate.reset();highlight(null);$('holdRing').hidden=true;return;}
+    const center={x:card.x,y:card.y},zone=zoneAt(center);
+    highlight(center);const hold=dropGate.update(zone?.dataset.category||null,now);
+    const ring=$('holdRing');ring.hidden=!zone;
+    if(zone){ring.style.setProperty('--hold',hold.progress*360+'deg');ring.style.transform=`translate(${card.x+card.el.offsetWidth/2-30}px,${card.y-card.el.offsetHeight/2-25}px)`;ring.querySelector('span').textContent=Math.round(hold.progress*100)+'%';}
+    if(hold.ready){const id=card.word.id;cancelDrag();drop(id,zone.dataset.category);state.blockedUntil=now+700;}
+  }
+  function paintDebug(now){
+    const enabled=state.debug&&state.screen==='game';$('debugLayer').hidden=!enabled;$('debugReadout').hidden=!enabled;
+    if(!enabled||now-state.debugPaint<120)return;state.debugPaint=now;
+    const card=[...cards.values()][0],box=$('debugCardBox');box.hidden=!card;
+    if(card){const r=cardRect(card),pad=touchRadius();Object.assign(box.style,{left:r.left-pad+'px',top:r.top-pad+'px',width:r.right-r.left+pad*2+'px',height:r.bottom-r.top+pad*2+'px'});}
+    zones.forEach((zone,i)=>{const r=zone.getBoundingClientRect();Object.assign($('debugZone'+i).style,{left:r.left+'px',top:r.top+'px',width:r.width+'px',height:r.height+'px'});});
+    const xy=p=>p?`${Math.round(p.x)}, ${Math.round(p.y)}`:'—';
+    // Hands exposes handedness confidence, NOT a tracking confidence. Never invent the latter.
+    $('debugReadout').textContent=`FPS: ${Math.round(state.fps)} · grab ${GRAB_HOLD_MS} ms · drop ${DROP_HOLD_MS} ms\nHand confidence: N/A (not exposed)\nL/R confidence: ${state.confidence===null?'N/A':(state.confidence*100).toFixed(1)+'%'}\n`+
+      ['Thumb 4','Index 8','Middle 12','Ring 16','Pinky 20'].map((name,i)=>`${name}: ${xy(state.tips[i])}`).join('\n')+`\nPalm: ${xy(state.palm)} · hit padding ${Math.round(touchRadius())} px`;
   }
   function pause(value) {
     if(!state.running||state.screen!=='game')return;
@@ -574,12 +615,19 @@
   function frame(now) {
     const dt=state.lastTime?Math.max(0,(now-state.lastTime)/1000):0;state.lastTime=now;
     if(playable()){
-      session.tick(dt);updateTimer();
-      for(const card of cards.values())if(card.status==='idle'){
-        const x=innerWidth*.5+(reduceMotion?0:Math.sin(now/2200+card.phase)*Math.min(8,innerWidth*.01));
-        const y=$('app').clientHeight*(.35+card.slot*.18)+(reduceMotion?0:Math.sin(now/2700+card.phase)*5);
-        position(card,x,y);
+      if(!state.awaitingHand)session.tick(dt);updateTimer();
+      if(dt>0)state.fps=state.fps*.9+(1/dt)*.1;
+      for(const card of cards.values()){
+        if(card.status==='idle')position(card,innerWidth*.5,$('app').clientHeight*.53+(reduceMotion?0:Math.sin(now/2900)*12));
+        if(card.status==='sorted'||card.status==='retry'){
+          card.waitMs-=dt*1000;
+          if(card.waitMs<=0){
+            if(card.status==='sorted'){cards.delete(card.word.id);card.el.remove();if(session.complete)finish();else spawn(0);}
+            else{card.status='idle';card.el.classList.remove('retry','touching');card.el.style.setProperty('--grab','0%');grabGate.reset();state.blockedUntil=now+180;}
+          }
+        }
       }
+      autoDrop(now);
       if(state.stream&&state.tracking&&state.mp&&video.readyState>=2&&!state.sendBusy&&now-state.lastSend>=65){
         state.sendBusy=true;state.lastSend=now;state.sendingEpoch=state.cameraEpoch;
         const epoch=state.cameraEpoch;
@@ -592,25 +640,27 @@
           clearTimeout(watchdog);state.sendBusy=false;state.sendStalled=false;
         });
       }
-      if(state.lastHand&&now-state.lastHand>600){if(state.drag?.source==='hand')cancelDrag();resetHand();}
+      if(state.lastHand&&now-state.lastHand>500){if(state.drag?.source==='hand')cancelDrag();resetHand();}
     }
+    paintDebug(now);
     requestAnimationFrame(frame);
   }
   $('start').onclick=()=>start(true);$('touchStart').onclick=()=>start(false);
-  $('skipCamera').onclick=()=>{stopCamera();state.cameraWanted=false;state.loading=false;$('loading').hidden=true;status('MOUSE / TOUCH MODE','Drag a word into a category.');};
+  $('skipCamera').onclick=()=>{stopCamera();state.cameraWanted=false;state.loading=false;state.awaitingHand=false;$('loading').hidden=true;status('TOUCH / MOUSE MODE','Drag to a category and hold briefly.');};
   $('teacherToggle').onclick=()=>{const open=$('teacherPanel').hidden;$('teacherPanel').hidden=!open;$('teacherToggle').setAttribute('aria-expanded',String(open));cancelDrag();resetHand();};
   $('closeTeacher').onclick=()=>{$('teacherPanel').hidden=true;$('teacherToggle').setAttribute('aria-expanded','false');};
   $('pause').onclick=()=>pause(!state.paused);$('resume').onclick=()=>pause(false);
   $('cameraToggle').onclick=()=>{
-    if(state.stream||state.loading){stopCamera();state.cameraWanted=false;state.loading=false;$('loading').hidden=true;status('MOUSE / TOUCH MODE','Camera off. Drag a word into a category.');}
+    if(state.stream||state.loading){stopCamera();state.cameraWanted=false;state.loading=false;state.awaitingHand=false;$('loading').hidden=true;status('TOUCH / MOUSE MODE','Camera off. Drag to a category and hold briefly.');}
     else connectCamera();
   };
   $('trackingToggle').onclick=async()=>{
     state.tracking=!state.tracking;cancelDrag();resetHand();updateControls();
     const epoch=state.cameraEpoch;
-    if(state.stream&&state.tracking){try{await timeout(initializeHands(),20000,'Hand tracking timed out.');if(epoch===state.cameraEpoch&&state.tracking)status('CAMERA + HAND TRACKING','Show one open hand, then pinch a card.');}catch(error){if(epoch===state.cameraEpoch&&state.tracking)cameraFailure(error);}}
-    else if(state.stream)status('CAMERA + TOUCH','Hand tracking off. Drag with mouse / touch.');
+    if(state.stream&&state.tracking){try{await timeout(initializeHands(),20000,'Hand tracking timed out.');if(epoch===state.cameraEpoch&&state.tracking)status('CAMERA + HAND TRACKING','Touch the word with ANY finger.');}catch(error){if(epoch===state.cameraEpoch&&state.tracking)cameraFailure(error);}}
+    else{state.awaitingHand=false;status('TOUCH / MOUSE MODE','Drag to a category and hold briefly.');}
   };
+  $('debugToggle').onclick=()=>{state.debug=!state.debug;updateControls();};
   $('soundToggle').onclick=()=>{state.sound=!state.sound;initAudio();updateControls();};
   $('fullscreen').onclick=async()=>{
     try{if(document.fullscreenElement)await document.exitFullscreen();else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();else say('Use landscape mode for a larger play area.','');}catch(_){say('Full screen is not available here.','');}
